@@ -1,12 +1,11 @@
-<p align="center">
-  <img width="186" height="90" src="https://user-images.githubusercontent.com/218949/44782765-377e7c80-ab80-11e8-9dd8-fce0e37c235b.png" alt="Beyonk" />
-</p>
 
-# Serverless Sapper for Now v2 - demo
 
-by [@antony](https://github.com/antony)
+# Serverless Sapper for Now v2 - template
 
-This is a demonstration of a Dynamic (i.e. not Static / Exported) [Sapper Template](https://github.com/sveltejs/sapper-template) to Now v2, using the [Now Sapper](https://github.com/thgh/now-sapper) builder.
+Sapper demo by [@antony](https://github.com/antony)
+
+This is a demonstration of a Dynamic (i.e. not Static / Exported) [Sapper Template](https://github.com/sveltejs/sapper-template) to Now v2, using the [Now Sapper](https://github.com/thgh/now-sapper) builder. 
+We @socialbakers added a "Café" design and template and connection to CMS.
 
 Static assets from your application are served from the now CDN.
 
@@ -15,8 +14,8 @@ Static assets from your application are served from the now CDN.
 Check out this project from git:
 
 ```bash
-npx degit beyonk-adventures/now-sapper-demo now-sapper-demo
-cd now-sapper-demo
+git clone nerdcafe
+cd nerdcafe
 npm i
 ```
 
