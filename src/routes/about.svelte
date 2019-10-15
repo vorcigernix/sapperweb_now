@@ -10,6 +10,7 @@
     padding-top: 54px;
     padding-bottom: 32px;
     text-align: center;
+    background-color: #f4f4f4;
   }
 
   .subtitle {

@@ -50,6 +50,7 @@
 
   :global(.nav-is-open .nav-button span:before) {
     left: -1px !important;
+    bottom: -6px !important;
     transform: rotate(-45deg);
   }
 

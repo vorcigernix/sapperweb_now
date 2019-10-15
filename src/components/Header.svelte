@@ -2,8 +2,10 @@
   import NavToggler from '../components/NavToggler.svelte';
   import Nav from '../components/Nav.svelte';
   export let segment;
+  import {onMount} from 'svelte';
 
   let active = false;
+  let adamIsObserving;
 
   function handleClick() {
     active === true ? (active = false) : (active = true);
@@ -12,18 +14,29 @@
   function closeMobileNav() {
     active = false;
   }
+
+  onMount(() => {
+    if (!('IntersectionObserver' in window)) {return}
+    const observer = new IntersectionObserver(function(entries) {
+      if (entries[0].intersectionRatio === 0) {
+        adamIsObserving = true;
+      } else if (entries[0].intersectionRatio === 1) {
+        adamIsObserving = false;
+      }
+    }, { threshold: [0,1] });
+    observer.observe(document.querySelector('.adam-is-doing-experiments-on-people'));
+  });
 </script>
 
 <style>
   .header {
-    --background: rgba(21, 21, 21, 0.7);
     position: fixed;
     width: 100vw;
     z-index: 10;
     top: 0;
     left: 0;
-    transition: background 250ms ease-in;
-    background: var(--background);
+    transition: background 200ms ease-in;
+    background: transparent;
   }
 
   .header__inner {
@@ -37,24 +50,31 @@
   .logo {
     cursor: pointer;
     display: flex;
+    transition: all 200ms ease-in;
   }
 
   .nav {
     position: fixed;
     top: 0;
     right: 0;
-    width: 320px;
+    width: 100vw;
     max-width: 100vw;
     transition: all 0.7s cubic-bezier(0.25, 1, 0.35, 1) 0s;
-    transform: translateX(400px);
+    transform: translateX(100vw);
     min-height: 100vh;
     background-color: #151515;
-    padding: 40px 20px 0;
+    padding: 40px 40px 0;
   }
 
   .nav-is-open .nav {
     transform: translateX(0);
   }
+
+  .adam--is-observing {
+    background-color: #252525;
+  }
+
+
 
   @media only screen and (min-width: 768px) {
     .toggler {
@@ -67,7 +87,7 @@
       transform: translateX(0);
       min-height: auto;
       width: 100%;
-      padding-top: 0;
+      padding: 0 20px 0;
       justify-content: center;
       background-color: transparent;
     }
@@ -79,10 +99,15 @@
       flex-direction: column;
       justify-content: center;
     }
+
+    .adam--is-observing .logo{
+      display: none;
+    }
   }
 </style>
 
-<header class="header {active ? 'nav-is-open' : ''}">
+<div class="adam-is-doing-experiments-on-people"></div>
+<header class="header {active ? 'nav-is-open' : ''} {adamIsObserving ? 'adam--is-observing' : ''}">
 
   <div class="header__inner">
     <a href="." class="logo">

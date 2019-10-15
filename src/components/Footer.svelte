@@ -3,6 +3,10 @@
 </script>
 
 <style>
+  section {
+    background-color: #f4f4f4;
+  }
+
   .overview-grid {
     padding: 72px 0 12px 0;
     display: grid;

@@ -1,4 +1,5 @@
 <style>
+
   .overview-grid {
     padding: 54px 0;
     display: grid;
@@ -10,7 +11,7 @@
   }
 
   .block__ico {
-    max-width: 150px;
+    max-width: 46px;
     margin-bottom: 16px;
   }
 
@@ -18,7 +19,7 @@
     color: #252525;
     font-weight: 700;
     line-height: 1.4em;
-    font-size: 2em;
+    font-size: 1.6em;
   }
 
   .block__perex {
@@ -37,18 +38,15 @@
 
     .block__ico {
       margin-right: 25px;
+      max-width: 75px;
     }
   }
 
   @media (min-width: 992px) {
     .overview-grid {
       row-gap: 0;
-      column-gap: 10px;
+      column-gap: 30px;
       grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .block__ico {
-      max-width: 46px;
     }
 
     .block {
@@ -56,11 +54,11 @@
     }
 
     .block__title {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     .block__perex {
-      font-size: 1em;
+      font-size: 14px;
     }
   }
 </style>
