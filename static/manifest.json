@@ -1,8 +1,8 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "sapperweb",
-	"short_name": "Sapper Web Template",
+	"name": "nerdcafe",
+	"short_name": "NerdCafé",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
