@@ -1,10 +1,10 @@
 <script>
-  import CTA from "../components/CTA.svelte";
-  import { fade, blur } from "svelte/transition";
+  import CTA from '../components/CTA.svelte';
+
   export let bannerTitle;
   export let bannerSubtitle;
-  export let themeBannerHeight;
-  export let hasButton;
+  export let themeBannerFullHeight = false;
+  export let hasButton = false;
   export let bannerImg;
 </script>
 
@@ -30,20 +30,20 @@
     transition: background-color 1s;
   }
 
-  .hero-banner--homepage {
-    background-image: url("img-2.jpg");
+  .homepage {
+    background-image: url('img-2.jpg');
   }
 
-  .hero-banner--about {
-    background-image: url("img-3.jpg");
+  .about {
+    background-image: url('img-3.jpg');
   }
 
-  .hero-banner--offer {
-    background-image: url("img-4.jpg");
+  .offer {
+    background-image: url('img-4.jpg');
   }
 
   .hero-banner:before {
-    content: "";
+    content: '';
     background: rgba(25, 32, 46, 0.5);
     position: absolute;
     top: 0;
@@ -93,12 +93,10 @@
   }
 </style>
 
-<div class="hero-banner {themeBannerHeight} {bannerImg}">
-  <h1 in:fade={{ delay: 400, duration: 400 }} out:fade={{ duration: 400 }}>
-    {bannerTitle}
-  </h1>
-  <p transition:blur="{{delay: 400, duration: 400, amount: 10}}">{bannerSubtitle}</p>
-  {#if hasButton === 'true'}
+<div class="hero-banner {themeBannerFullHeight ? 'hero-banner--full-height' : ''} {bannerImg}">
+  <h1>{bannerTitle}</h1>
+  <p>{bannerSubtitle}</p>
+  {#if hasButton}
     <CTA linkHref="#" linkTheme="link-light" linkTitle="Book a table" />
   {/if}
 </div>

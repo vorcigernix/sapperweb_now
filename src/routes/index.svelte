@@ -2,7 +2,7 @@
   import HeroBanner from '../components/Banner.svelte';
   import Overview from '../components/Overview.svelte';
   import OpenHours from '../components/OpenHours.svelte';
-  import Analytics from '../components/GoogleAnalytics.svelte';
+  import {fade} from 'svelte/transition';
 </script>
 
 <style>
@@ -14,13 +14,11 @@
 </svelte:head>
 
 <div>
-  <HeroBanner 
+  <HeroBanner
     bannerSubtitle="You should come and taste for yourself"
     bannerTitle="Welcome"
-    themeBannerHeight="hero-banner--full-height"
-    hasButton="true"
-    bannerImg="hero-banner--homepage" />
+    themeBannerFullHeight
+    bannerImg="homepage" />
   <Overview />
   <OpenHours />
-  <Analytics gaID="UA-134288088-2" />
 </div>

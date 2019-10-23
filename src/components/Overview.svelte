@@ -17,6 +17,7 @@
 
   .block__title {
     color: #252525;
+    text-transform: uppercase;
     font-weight: 700;
     line-height: 1.4em;
     font-size: 1.6em;
@@ -69,7 +70,7 @@
       <div class="block">
         <img src="img/ico-1.png" alt="" class="block__ico" />
         <div>
-          <h2 class="block__title">FRESH FOOD</h2>
+          <h2 class="block__title">Fresh Food</h2>
           <p class="block__perex">
             Donec lacinia magna sit amet arcu aliquet luctus maecenas vehicula.
           </p>
@@ -78,7 +79,7 @@
       <div class="block">
         <img src="img/ico-2.png" alt="" class="block__ico" />
         <div>
-          <h2 class="block__title">CHEF'S SPECIALS</h2>
+          <h2 class="block__title">Chef's Specials</h2>
           <p class="block__perex">
             Donec lacinia magna sit amet arcu aliquet luctus maecenas vehicula.
           </p>
@@ -87,7 +88,7 @@
       <div class="block">
         <img src="img/ico-3.png" alt="" class="block__ico" />
         <div>
-          <h2 class="block__title">GOOD WINE</h2>
+          <h2 class="block__title">Good Wine</h2>
           <p class="block__perex">
             Donec lacinia magna sit amet arcu aliquet luctus maecenas vehicula.
           </p>
