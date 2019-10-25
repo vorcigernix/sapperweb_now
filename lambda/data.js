@@ -30,6 +30,6 @@ export async function getProducts() {
 module.exports = async (req, res) => {
   const response = await fetch(BASE_URL);
   const {ref} = await response.json();
-  console.log(await response.json());
+  console.log(response.json());
   res.status(200).send(`Hello ${ref}!`);
 };
