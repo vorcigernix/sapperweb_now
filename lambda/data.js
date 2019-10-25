@@ -5,9 +5,9 @@ const BASE_URL = process.env.CMS_URL || 'https://sapperweb.cdn.prismic.io/api/v2
 
 
 
-//let masterRef = null;
+let masterRef = null;
 
-/* async function getRef() {
+ async function getRef() {
   if (masterRef) {
     return masterRef
   }
@@ -16,7 +16,7 @@ const BASE_URL = process.env.CMS_URL || 'https://sapperweb.cdn.prismic.io/api/v2
   masterRef = json.refs[0].ref
   return masterRef
 }
-
+/*
 export async function getProducts() {
   const productsUrl = new URL('/api/v2/documents/search', BASE_URL)
   const ref = await getRef()
@@ -28,7 +28,8 @@ export async function getProducts() {
 } */
 
 module.exports = async (req, res) => {
-  const response = await fetch(BASE_URL);
-  const {ref} = await response.json();
+  //const response = await fetch(BASE_URL);
+  //const {ref} = await response.json();
+  const ref = await getRef();
   res.status(200).send(`Hello ${ref}!`);
 };
