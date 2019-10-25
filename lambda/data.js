@@ -16,20 +16,19 @@ let masterRef = null;
   masterRef = json.refs[0].ref
   return masterRef
 }
-/*
-export async function getProducts() {
-  const productsUrl = new URL('/api/v2/documents/search', BASE_URL)
-  const ref = await getRef()
-  productsUrl.searchParams.set('ref', ref)
-  productsUrl.searchParams.set('fetchLinks', 'category.title')
-  productsUrl.searchParams.set('q', '[[at(document.type,"product")]]')
-  const response = await fetch(productsUrl)
-  return response.json()
-} */
+async function getProducts() {
+  const productsUrl = new URL('/api/v2/documents/search', BASE_URL);
+  const ref = await getRef();
+  productsUrl.searchParams.set('ref', ref);
+  productsUrl.searchParams.set('fetchLinks', 'category.title');
+  productsUrl.searchParams.set('q', '[[at(document.type,"product")]]');
+  const response = await fetch(productsUrl);
+  return response.json();
+} 
 
 module.exports = async (req, res) => {
   //const response = await fetch(BASE_URL);
   //const {ref} = await response.json();
-  const ref = await getRef();
-  res.status(200).send(`Hello ${ref}!`);
+  const products = await getProducts();
+  res.status(200).send(`Hello ${products}!`);
 };
