@@ -20,8 +20,5 @@
       ],
       "dest": "/lambda/data.js"
     }
-  ],
-  "regions": [
-    "lhr"
   ]
 }
