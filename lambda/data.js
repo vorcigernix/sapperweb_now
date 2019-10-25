@@ -25,6 +25,7 @@ export async function getProducts() {
 
 module.exports = async (req, res) => {
   const refjson = await fetch(BASE_URL);
+  console.log(refjson);
   const {ref_id} = await refjson.json();
   res.status(200).send(`Hello ${ref_id}!`);
 };
