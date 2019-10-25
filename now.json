@@ -1,8 +1,25 @@
 {
   "version": 2,
-  "name": "test-v2-qa",
+  "name": "sapperweb",
   "builds": [
-    { "src": "package.json", "use": "now-sapper" }
+    {
+      "src": "package.json",
+      "use": "now-sapper"
+    },
+    {
+      "src": "/lambda/*.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/lambda",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "dest": "/lambda/data.js"
+    }
   ],
   "regions": [
     "lhr"
