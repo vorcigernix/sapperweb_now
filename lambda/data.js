@@ -1,6 +1,10 @@
 import fetch from 'node-fetch';
 
 const BASE_URL = process.env.CMS_URL || 'https://sapperweb.cdn.prismic.io/api/v2';
+
+
+
+
 //let masterRef = null;
 
 /* async function getRef() {
@@ -25,7 +29,6 @@ export async function getProducts() {
 
 module.exports = async (req, res) => {
   const refjson = await fetch(BASE_URL);
-  console.log(refjson);
   const {ref_id} = await refjson.json();
-  res.status(200).send(`Hello ${ref_id}!`);
+  res.status(200).send(`Hello ${ref_id}! JSON ${refjson}`);
 };
